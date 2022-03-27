@@ -1,18 +1,40 @@
 body {
-  margin: 0px;
+  margin: 0;
   background-image: url(image/background.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .container {
   background-color: #fff;
+  height: 100%;
+  max-width: 800px;
   min-height: 100vh;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-top: 10px solid blanchedalmond;
+  border-bottom: 10px solid blanchedalmond;
+}
+.input-area {
+  position: relative;
+}
+#add-button {
+  font-size: 15px;
+  border: 0;
+  background-color: blanchedalmond;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+}
+
+#task-input {
+  margin-top: 15px;
+  width: 60%;
+  border: 2px solid blanchedalmond;
+  opacity: 0.5;
 }
 .task-area {
-  border: 1px solid lightgray;
+  margin-top: 20px;
+  border: 2px solid lightgray;
 }
 .task-tabs {
   display: flex;
@@ -26,10 +48,11 @@ body {
   height: 4px;
   background-color: pink;
   position: absolute;
-  width: 75px;
+  width: 70px;
   left: 0px;
   top: 52px;
   padding: 0px;
+  transition: 0.5s;
 }
 .task {
   display: flex;
@@ -41,4 +64,6 @@ body {
 }
 .task-tabs {
   cursor: pointer;
+  margin: 0.5em;
+  color: black;
 }

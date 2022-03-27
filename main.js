@@ -12,11 +12,11 @@
 let taskInput = document.getElementById("task-input");
 let addButton = document.getElementById("add-button");
 let tabs = document.querySelectorAll(".task-tabs div");
+let elem = document.getElementById("task-input");
 let taskList = [];
 let mode = "all";
 let filterList = [];
 addButton.addEventListener("click", addTask);
-
 // addTask함수는 +버튼이 클릭했을시 taskLIST목록에 taskInput값이 추가 된다.
 // 추가 정보를 넣기위해 객체활용(필요한 정보를 하나로 묶어주는 역활)
 // 아이템을 분리하기 위해 각각의 아이템에 id라는 속성을 부여해준다.
@@ -37,7 +37,6 @@ function addTask() {
   // isComplete 끝났는지 안끝났는지 확인해주는 요소
 
   taskList.push(task);
-  console.log(taskList);
   render();
 }
 
@@ -89,12 +88,12 @@ function togleComplete(id) {
 function filter(event) {
   mode = event.target.id;
   filterList = [];
+  document.getElementById("under-line").style.left =
+    event.target.offsetLeft + "px";
   document.getElementById("under-line").style.width =
     event.target.offsetWidth + "px";
   document.getElementById("under-line").style.top =
-    event.target.offsetTop + event.target.offsetHeight + "px";
-  document.getElementById("under-line").style.left =
-    event.target.offsetLeft + "px";
+    event.target.offsetTop + (event.target.offsetHeight - 4) + "px";
   if (mode == "all") {
     render();
   } else if (mode == "ongoing") {
